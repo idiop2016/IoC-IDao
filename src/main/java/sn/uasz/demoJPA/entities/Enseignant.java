@@ -8,7 +8,7 @@ import lombok.*;
 
 @Entity
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter @ToString
-public class Prof {
+public class Enseignant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
