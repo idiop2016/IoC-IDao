@@ -3,6 +3,8 @@ package sn.uasz.demoJPA.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @AllArgsConstructor @NoArgsConstructor @Getter @Setter @ToString
 public class Enseignement {
@@ -13,16 +15,11 @@ public class Enseignement {
     private String libelle;
     private String type;
 
-   /* @ManyToOne
-    @JoinColumn(name = "ue_id")*/
-    private UE ue;
-
-/*    @ManyToOne
-    @JoinColumn(name = "ec_id")*/
+    @ManyToOne
     private EC ec;
 
-//    @OneToMany
-    private Choix choix;
+    @OneToMany
+    private List<Choix> choixes;
 
     private String createby;
     private String createat;

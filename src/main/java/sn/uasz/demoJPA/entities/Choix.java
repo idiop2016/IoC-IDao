@@ -11,12 +11,10 @@ public class Choix {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    /*@ManyToOne
-    @JoinColumn(name = "enseignant_id")*/
+    @OneToOne
     private Enseignant enseignant;
 
-    /*@ManyToOne
-    @JoinColumn(name = "enseignement_id")*/
+    @OneToOne
     private Enseignement enseignement;
 
     private String dateModification;
@@ -24,5 +22,6 @@ public class Choix {
     private boolean validation;
 
     private String createby;
+
     private String createat;
 }
