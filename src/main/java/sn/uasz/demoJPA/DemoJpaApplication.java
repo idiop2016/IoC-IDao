@@ -5,21 +5,19 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import sn.uasz.demoJPA.entities.Enseignant;
-import sn.uasz.demoJPA.entities.Product;
 import sn.uasz.demoJPA.repositories.EnseignantRepository;
-import sn.uasz.demoJPA.repositories.ProductRepository;
 
 import java.util.List;
 
 @SpringBootApplication
 public class DemoJpaApplication implements CommandLineRunner {
-	@Autowired
-	ProductRepository productRepository;
+	/*@Autowired
+	ProductRepository productRepository;*/
 	@Autowired
 	EnseignantRepository enseignantRepository;
-
-	/*public DemoJpaApplication(ProductRepository productRepository) {
-		this.productRepository = productRepository;
+/*
+	public DemoJpaApplication(EnseignantRepository enseignantRepository) {
+		this.enseignantRepository = enseignantRepository;
 	}*/
 	//EnseignantRepository enseignantRepository;
 
@@ -57,7 +55,9 @@ public class DemoJpaApplication implements CommandLineRunner {
 		enseignantRepository.save(new Enseignant(null,"Diop","Ibrahima","181185/D","Professeur Assimulé"));
 		enseignantRepository.save(new Enseignant(null,"Fall","Modou","181186/A","Vacataire"));
 		enseignantRepository.save(new Enseignant(null,"Ndiaye","Ibrahima","181187/B","Vacataire"));
-		List<Enseignant> enseignents = enseignantRepository.findByPrenomContainsIgnoreCase("Ibra");
+
+		List<Enseignant> enseignents = enseignantRepository.findAll();
+		//List<Enseignant> enseignents = enseignantRepository.findAll();
 		enseignents.forEach(enseignant -> {
 			System.out.println("--------------------");
 			System.out.println(enseignant.getPrenom());

@@ -10,10 +10,13 @@ import lombok.*;
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter @ToString
 public class Enseignant {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nom;
     private String prenom;
     private String matricule;
     private String grade;
+
+ /*   private String createby;
+    private String createat;*/
 }

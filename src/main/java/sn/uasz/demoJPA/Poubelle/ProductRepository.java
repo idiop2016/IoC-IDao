@@ -1,9 +1,9 @@
-package sn.uasz.demoJPA.repositories;
+package sn.uasz.demoJPA.Poubelle;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import sn.uasz.demoJPA.entities.Product;
+import sn.uasz.demoJPA.Poubelle.Product;
 
 import java.util.List;
 

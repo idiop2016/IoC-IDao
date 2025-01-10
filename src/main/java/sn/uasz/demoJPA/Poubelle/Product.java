@@ -1,4 +1,4 @@
-package sn.uasz.demoJPA.entities;
+package sn.uasz.demoJPA.Poubelle;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
