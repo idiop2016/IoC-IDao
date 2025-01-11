@@ -7,7 +7,7 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@AllArgsConstructor @NoArgsConstructor @Getter @Setter @ToString
+@Data
 public class UE {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

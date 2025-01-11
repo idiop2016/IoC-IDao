@@ -4,17 +4,19 @@ package sn.uasz.demoJPA.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
-@AllArgsConstructor @NoArgsConstructor @Getter @Setter @ToString
+@Data
 public class Choix {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     private Enseignant enseignant;
 
-    @OneToOne
+    @ManyToOne
     private Enseignement enseignement;
 
     private String dateModification;

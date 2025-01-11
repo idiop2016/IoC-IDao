@@ -6,7 +6,7 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@AllArgsConstructor @NoArgsConstructor @Getter @Setter @ToString
+@Data
 public class Enseignement {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

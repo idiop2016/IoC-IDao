@@ -6,11 +6,10 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@NoArgsConstructor @AllArgsConstructor @Getter @Setter @ToString
-public class Enseignant {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+@Data
+@DiscriminatorValue(value = "PROF")
+public class Enseignant extends User{
+
     private String nom;
     private String prenom;
     private String matricule;
@@ -19,4 +18,5 @@ public class Enseignant {
     private String createat;
     @OneToMany
     private List<Choix> choixes;
+
 }
