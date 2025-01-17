@@ -21,7 +21,7 @@ public class UE {
     private int tpe;
     private  String semestre;
 
-    @OneToMany
+    @OneToMany(mappedBy = "ue")
     private List<EC> ecs;
 
     private String createby;

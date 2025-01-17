@@ -13,10 +13,10 @@ public class Choix {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Enseignant enseignant;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Enseignement enseignement;
 
     private String dateModification;

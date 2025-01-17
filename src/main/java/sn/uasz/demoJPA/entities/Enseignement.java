@@ -18,7 +18,7 @@ public class Enseignement {
     @ManyToOne
     private EC ec;
 
-    @OneToMany
+    @OneToMany(mappedBy = "enseignement")
     private List<Choix> choixes;
 
     private String createby;

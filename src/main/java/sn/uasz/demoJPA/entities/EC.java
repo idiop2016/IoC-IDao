@@ -21,14 +21,12 @@ public class EC {
     private int tpe;
     private  String semestre;
 
-    @ManyToOne
-    /*@JoinColumn(name = "ue_id")*/
+    @ManyToOne(fetch = FetchType.LAZY)
     private UE ue;
 
-    @OneToMany
+    @OneToMany(mappedBy = "ec")
     private List<Enseignement> enseignements;
 
     private String createby;
     private String createat;
 }
-

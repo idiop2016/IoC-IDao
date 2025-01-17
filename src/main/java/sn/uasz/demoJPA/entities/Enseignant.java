@@ -16,7 +16,7 @@ public class Enseignant extends User{
     private String grade;
     private String createby;
     private String createat;
-    @OneToMany
+    @OneToMany(mappedBy = "enseignant")
     private List<Choix> choixes;
 
 }

@@ -91,4 +91,3 @@ public class DemoJpaApplication implements CommandLineRunner {
 		});
 	}
 }
-
