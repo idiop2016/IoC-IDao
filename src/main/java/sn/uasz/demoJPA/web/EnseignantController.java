@@ -15,34 +15,34 @@ public class EnseignantController {
     @Autowired
     EnseignantRepository enseignantRepository;
 
-    @GetMapping("/index")
+    @GetMapping("/enseignant/index")
     public String index(Model model){
         List<Enseignant> enseignants=enseignantRepository.findAll();
         model.addAttribute("listeEnseignants",enseignants);
-        return "enseignants";
+        return "enseignant/enseignants";
     }
-    @RequestMapping(value = "/form", method = RequestMethod.GET)
+    @RequestMapping(value = "enseignant/form", method = RequestMethod.GET)
     public String form(Model model){
         model.addAttribute("enseignant", new Enseignant());
-        return "formEnseignant";
+        return "enseignant/formEnseignant";
     }
-    @PostMapping(path= "/save")
+    @PostMapping(path= "enseignant/save")
     public String save(Enseignant p){
         enseignantRepository.save(p);
-        return "redirect:/index";
+        return "redirect:/enseignant/index";
     }
-    @RequestMapping("/editEnseignant")
+    @RequestMapping("enseignant/editEnseignant")
     public String editEnseignant(Model model, @RequestParam(name = "id") Long id){
         Enseignant enseignant=enseignantRepository.findById(id).orElse(null);
         if (enseignant==null) throw new RuntimeException("Enseignant introuvable");
         model.addAttribute("enseignant", enseignant);
-        return "editEnseignant";
+        return "enseignant/editEnseignant";
     }
 
-    @GetMapping("/deleteEnseignant")
+    @GetMapping("enseignant/deleteEnseignant")
     public String delete (@RequestParam(name = "id") Long id){
         enseignantRepository.deleteById(id);
-        return "redirect:/index";
+        return "redirect:/enseignant/index";
     }
 
 }
